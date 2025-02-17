@@ -315,17 +315,9 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="request.status.php" class="nav-link">
+                <a href="./forms/general.html" class="nav-link">
                     <i class="nav-icon bi bi-circle"></i>
-                    <p>Request and Status</p>
-                  </a>
-                  <a href="management.php" class="nav-link">
-                    <i class="nav-icon bi bi-circle"></i>
-                    <p>Management</p>
-                  </a>
-                  <a href="reports.php" class="nav-link">
-                    <i class="nav-icon bi bi-circle"></i>
-                    <p>Reports</p>
+                    <p>General Elements</p>
                   </a>
                 </li>
               </ul>
@@ -340,9 +332,18 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="./forms/general.html" class="nav-link">
+                 
+                  <a href="request.status.php" class="nav-link">
                     <i class="nav-icon bi bi-circle"></i>
-                    <p>General Elements</p>
+                    <p>Request and Status</p>
+                  </a>
+                  <a href="management.php" class="nav-link">
+                    <i class="nav-icon bi bi-circle"></i>
+                    <p>Management</p>
+                  </a>
+                  <a href="reports.php" class="nav-link">
+                    <i class="nav-icon bi bi-circle"></i>
+                    <p>Reports</p>
                   </a>
                 </li>
               </ul>
