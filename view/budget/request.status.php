@@ -1,3 +1,15 @@
+<?php
+
+if(!isset($_SESSION['unique_id'])){
+
+  header("Location: ../../index.php");
+  exit();
+
+}
+
+
+?>
+
 <!doctype html>
 <html lang="en">
   <!--begin::Head-->
@@ -251,7 +263,7 @@
                 <!--begin::Menu Footer-->
                 <li class="user-footer">
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
-                  <a href="#" class="btn btn-default btn-flat float-end">Sign out</a>
+                  <a href="../logout.php" class="btn btn-default btn-flat float-end">Sign out</a>
                 </li>
                 <!--end::Menu Footer-->
               </ul>

@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Login - SB Admin</title>
+        <title>Register</title>
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
@@ -18,30 +18,37 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-5">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Register</h3></div>
                                     <div class="card-body">
-                                        <form action="./controller/signin.php" method="POST" >
-                                            <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" name="email"/>
-                                                <label for="inputEmail">Email address</label>
-                                            </div>
-                                            <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputPassword" type="password" placeholder="Password" name="password"/>
-                                                <label for="inputPassword">Password</label>
-                                            </div>
-                                            <div class="form-check mb-3">
-                                                <input class="form-check-input" id="inputRememberPassword" type="checkbox" value="" />
-                                                <label class="form-check-label" for="inputRememberPassword">Remember Password</label>
-                                            </div>
-                                            <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="small" href="password.html">Forgot Password?</a>
-                                                <!-- <a class="btn btn-primary" href="./view/index.php">Login</a> -->
-                                                 <input type="submit" name="signin" value="Signin">
-                                            </div>
-                                        </form>
+                                    <form action="./controller/signup.php" method="POST">
+    <div class="form-floating mb-3">
+        <input class="form-control" id="inputName" type="text" placeholder="Full Name" name="name" required />
+        <label for="inputName">Full Name</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" name="email" required/>
+        <label for="inputEmail">Email address</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input class="form-control" id="inputPassword" type="password" placeholder="Password" name="password" required />
+        <label for="inputPassword">Password</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input class="form-control" id="inputConfirmPassword" type="password" placeholder="Confirm Password" name="confirm_password" required />
+        <label for="inputConfirmPassword">Confirm Password</label>
+    </div>
+    <div class="form-check mb-3">
+        <input class="form-check-input" id="inputRememberPassword" type="checkbox" value="" />
+        <label class="form-check-label" for="inputRememberPassword">Remember Password</label>
+    </div>
+    <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+        <a class="small" href="password.html">Forgot Password?</a>
+        <input type="submit" name="signup" value="SignUp" class="btn btn-primary" />
+    </div>
+</form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="register.html">Need an account? Sign up!</a></div>
+                                        <div class="small"><a href="index.php">Already Have An Account?</a></div>
                                     </div>
                                 </div>
                             </div>
