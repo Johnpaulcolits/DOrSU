@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 include_once "../database/config.php";
 
 if(isset($_POST['signup'])){
@@ -10,7 +11,10 @@ if(isset($_POST['signup'])){
     $confirm_password = $_POST['confirm_password'];
 
     if($password !== $confirm_password){
-        echo "<script>alert('Passwords didn\'t match'); window.location.href='../register.php';</script>";
+        // echo "<script>alert('Passwords didn't match'); window.location.href='../register.php';</script>";
+        $_SESSION['error'] = "Passwords didn't match";
+        header("Location: ../register.php");
+
     } else {
 
         $check_email = "SELECT * FROM users WHERE email = ?";
@@ -20,7 +24,11 @@ if(isset($_POST['signup'])){
         $result = $stmt->get_result();
 
         if($result->num_rows > 0){
-            echo "<script>alert('Email already exists'); window.location.href='../register.php';</script>";
+            // echo "<script>alert('Email already exists'); window.location.href='../register.php';</script>";
+            $_SESSION['error'] = "Email Already Exist";
+            header("Location: ../register.php");
+
+
         } else {
             $hashed_password  = password_hash($password, PASSWORD_DEFAULT);
             $sql = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
@@ -30,7 +38,11 @@ if(isset($_POST['signup'])){
             if($stmt->execute()){
                 echo "<script>alert('Registered successfully!'); window.location.href='../index.php';</script>";
             } else {
-                echo "<script>alert('An error occurred!'); window.location.href='../register.php';</script>";
+                    $_SESSION['error'] = "An error occured";
+                    header("Location: ../register.php");
+                    exit();
+
+                // echo "<script>alert('An error occurred!'); window.location.href='../register.php';</script>";
             }
             $stmt->close();
         }

@@ -21,6 +21,20 @@
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
                                     <div class="card-body">
                                         <form action="./controller/signin.php" method="POST" >
+                                        <?php session_start(); ?>
+                                        <?php if(isset($_SESSION['error'])): ?>
+                                        <p id="error-msg" style="color: red;"><?php echo $_SESSION['error']; unset($_SESSION['error']); ?></p>
+                                        <script>
+                                     setTimeout(function() {
+                                       const errorMsg = document.getElementById('error-msg');
+                                         if (errorMsg) {
+                                      errorMsg.style.display = 'none';
+                                         }
+                                             }, 3000); 
+                                         </script>
+                                            <?php endif; ?>
+
+
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" name="email"/>
                                                 <label for="inputEmail">Email address</label>
@@ -41,7 +55,7 @@
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="register.html">Need an account? Sign up!</a></div>
+                                        <div class="small"><a href="register.php">Need an account? Sign up!</a></div>
                                     </div>
                                 </div>
                             </div>
